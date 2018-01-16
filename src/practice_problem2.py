@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Wenxing Li.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -56,6 +56,21 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    list = [1,2,3,4,5]
+    print('expected:',[2,3,4,5,6] )
+    print('actual:  ',practice_problem2a(list,1))
+
+    list = [1, 2, 3, 4, 5]
+    print('expected:', [3, 4, 5, 6, 7])
+    print('actual:  ', practice_problem2a(list, 2))
+
+    list = [3,5,7,9]
+    print('expected:', [4,6,8,10])
+    print('actual:  ', practice_problem2a(list, 1))
+
+    list = [10,29,30]
+    print('expected:', [15,34,35])
+    print('actual:  ', practice_problem2a(list, 5))
 
 def practice_problem2a(sequence, delta):
     """
@@ -76,14 +91,16 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k]+delta
+    return sequence
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -177,7 +194,10 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    string = ''
+    for k in range(len(sequence)):
+        string += sequence[k][0]
+    return string
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
